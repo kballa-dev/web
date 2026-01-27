@@ -202,8 +202,12 @@ nav a:hover {
 
 /* Services Section */
 .services {
-    padding: 5rem 1rem;
+    padding: 2rem 1rem;
     background: var(--secondary-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .container {
@@ -213,8 +217,8 @@ nav a:hover {
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
     color: #68cf0d;
 }
 
@@ -248,13 +252,16 @@ nav a:hover {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
+    max-height: 60vh;
 }
 
 .service-card {
-    padding: 1.5rem 2rem 2rem 2rem;
+    padding: 1rem 1.5rem;
     background-image: url('linux-terminal.jpg');
     background-size: cover;
     background-position: center;
@@ -264,7 +271,8 @@ nav a:hover {
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
     overflow: hidden;
-    min-height: 320px;
+    height: 100%;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -300,7 +308,7 @@ nav a:hover {
 .service-card h3 {
     font-size: clamp(1.1rem, 1.5rem, 1.5rem);
     margin-bottom: 0.5rem;
-    margin-top: -6rem;
+    margin-top: 0;
     color: #ffffff;
     font-family: 'JetBrains Mono', 'Fira Code', 'Source Code Pro', 'Consolas', 'Monaco', 'Menlo', 'Courier New', monospace;
     font-weight: bold;
@@ -349,8 +357,8 @@ nav a:hover {
     gap: 0.5rem;
     font-family: 'JetBrains Mono', 'Fira Code', 'Source Code Pro', 'Consolas', 'Monaco', 'Menlo', 'Courier New', monospace;
     color: #00e676;
-    opacity: 0.8;
-    transition: all 0.3s ease;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .console-icon {
@@ -368,8 +376,8 @@ nav a:hover {
 }
 
 .service-card:hover .console-prompt {
-    opacity: 1;
-    transform: translateX(2px);
+    opacity: 0;
+    transform: translateX(10px);
 }
 
 /* About Section */
@@ -377,6 +385,10 @@ nav a:hover {
     padding: 5rem 1rem;
     background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
     color: var(--text-light);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .about-content {
@@ -391,71 +403,17 @@ nav a:hover {
     line-height: 1.8;
 }
 
-/* Team Section */
-.team {
-    padding: 5rem 2rem;
-    background: white;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    margin-top: 3rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.team-member {
-    text-align: center;
-    padding: 2rem;
-    background: #f9f9f9;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.team-member:hover {
-    transform: translateY(-5px);
-}
-
-.team-member-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 0 auto 1.5rem;
-    background: var(--gradient-accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    color: white;
-    font-weight: bold;
-}
-
-.team-member h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-}
-
-.team-member .role {
-    color: var(--accent-color);
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.team-member p {
-    color: var(--text-dark);
-    line-height: 1.6;
-}
-
 /* Contact Section */
 .contact {
     padding: 5rem 1rem;
     background: linear-gradient(135deg, #0f0f0f 0%, #1f1f1f 100%);
     color: var(--text-light);
     text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .contact-info {
@@ -550,8 +508,14 @@ footer p {
         font-size: 2rem;
     }
 
-    .services-grid,
-    .team-grid {
+    .services-grid {
         grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        max-height: none;
+        gap: 1rem;
+    }
+
+    .services {
+        padding: 1rem;
     }
 }
